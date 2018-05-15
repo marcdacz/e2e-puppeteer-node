@@ -25,3 +25,8 @@ const rootDir = path.resolve(__dirname, '..');
 global.actualDir = `${rootDir}/images/actual`;
 global.baselineDir = `${rootDir}/images/baseline`;
 global.diffDir = `${rootDir}/images/diff`;
+
+const fs = require('fs');
+if (!fs.existsSync(actualDir)) fs.mkdirSync(actualDir);
+if (!fs.existsSync(baselineDir)) fs.mkdirSync(baselineDir);
+if (!fs.existsSync(diffDir)) fs.mkdirSync(diffDir);
