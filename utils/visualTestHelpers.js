@@ -26,6 +26,32 @@ const compareScreenshots = (fileName, tolerance = 0) => {
 	});
 };
 
+const looksSame = require('looks-same');
+const compareScreenshotsV2 = (fileName) => {
+	return new Promise(async (resolve, reject) => {
+		let actualImage = `${actualDir}/${fileName}.png`;
+		let baselineImage = `${baselineDir}/${fileName}.png`;
+		let diffImage = `${diffDir}/${fileName}.png`;
+
+		await looksSame(actualImage, baselineImage, {strict: false, ignoreAntialiasing: true, pixelRatio: 2}, (error, equal) => {
+			if (equal === false) {
+				looksSame.createDiff({
+					reference: baselineImage,
+					current: actualImage,
+					diff: diffImage,
+					highlightColor: '#FFFF00',
+					strict: false,
+					ignoreAntialiasing: true,
+					pixelRatio: 2
+				}, (error) => { });
+			}
+			expect(equal, `validating image ${fileName}`).to.be.true;
+			resolve();
+		});		
+	});
+};
+
 module.exports = {
-	compareScreenshots
+	compareScreenshots,
+	compareScreenshotsV2
 };
