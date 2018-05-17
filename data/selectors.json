@@ -1,9 +1,12 @@
 {
 	"agencyProfile": {
 		"agencyHeader": ".agency-profile-overview__header",
+		"agencyAvatar": ".rma-profile-avatar img",
+		"agencyBannerImage": ".rma-profile-header-banner img",
+		"agencyCoverImage": ".profile-header-cover-image-wrapper img",
 		"agencyName": ".rma-profile-header__title",
 		"agencyAddress": ".rma-profile-header__subtitle",
-		"agencyOverallStarRating": "span[itemprop=rating]",
+		"agencyOverallStarRating": ".rmaStarRatingSummary__rating",
 		"agencyReviewsCount": ".rma-profile-header-info-bar__review-count"
 	}
 }

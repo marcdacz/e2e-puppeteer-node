@@ -19,7 +19,7 @@ describe('👀 -> homePage', () => {
 			await page.goto(baseUrl);
 			let fileName = `homePage - ${device}`;
 			await page.screenshot({ path: `${actualDir}/${fileName}.png` });
-			await visualTestHelpers.compareScreenshots(fileName);
+			await visualTestHelpers.compareScreenshotsPM(fileName);
 		});
 	}
 });

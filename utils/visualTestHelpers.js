@@ -1,8 +1,7 @@
 const fs = require('fs');
 const PNG = require('pngjs').PNG;
 const pixelmatch = require('pixelmatch');
-
-const compareScreenshots = (fileName, tolerance = 0) => {
+const compareScreenshotsPM = (fileName, tolerance = 0) => {
 	return new Promise((resolve, reject) => {
 		const img1 = fs.createReadStream(`${actualDir}/${fileName}.png`).pipe(new PNG()).on('parsed', doneReading);
 		const img2 = fs.createReadStream(`${baselineDir}/${fileName}.png`).pipe(new PNG()).on('parsed', doneReading);
@@ -27,7 +26,7 @@ const compareScreenshots = (fileName, tolerance = 0) => {
 };
 
 const looksSame = require('looks-same');
-const compareScreenshotsV2 = (fileName) => {
+const compareScreenshotsLS = (fileName) => {
 	return new Promise(async (resolve, reject) => {
 		let actualImage = `${actualDir}/${fileName}.png`;
 		let baselineImage = `${baselineDir}/${fileName}.png`;
@@ -52,6 +51,6 @@ const compareScreenshotsV2 = (fileName) => {
 };
 
 module.exports = {
-	compareScreenshots,
-	compareScreenshotsV2
+	compareScreenshotsPM,
+	compareScreenshotsLS
 };
