@@ -1,0 +1,9 @@
+{
+	"agencyProfile": {
+		"agencyHeader": ".agency-profile-overview__header",
+		"agencyName": ".rma-profile-header__title",
+		"agencyAddress": ".rma-profile-header__subtitle",
+		"agencyOverallStarRating": "span[itemprop=rating]",
+		"agencyReviewsCount": ".rma-profile-header-info-bar__review-count"
+	}
+}

@@ -17,7 +17,14 @@ global.devicesToEmulate = [
 	'Nexus 6',
 	'iPad Pro'
 ];
+global.pageWidthsToTest = [
+	375,
+	768,
+	1024,
+	1920
+];
 
+global.selectors = require('../data/selectors.json');
 global.visualTestHelpers = require('../utils/visualTestHelpers');
 
 const path = require('path');
@@ -30,3 +37,5 @@ const fs = require('fs');
 if (!fs.existsSync(actualDir)) fs.mkdirSync(actualDir);
 if (!fs.existsSync(baselineDir)) fs.mkdirSync(baselineDir);
 if (!fs.existsSync(diffDir)) fs.mkdirSync(diffDir);
+
+

@@ -15,7 +15,7 @@ describe('👀 -> location profile', () => {
 
 
 	let width = 1920;
-	it.only(`should display review container correctly at ${width}`, async () => {
+	it(`should display review container correctly at ${width}`, async () => {
 		await page.setViewport({ width: width, height: 1080 });
 		await page.goto(`${baseUrl}/real-estate-profile/sales/victoria/reviews`);
 		await page.waitFor('div[class*=AgentHeader---agent]');
